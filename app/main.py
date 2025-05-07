@@ -11,7 +11,7 @@ from app.ocr import extract_text
 
 app = FastAPI()
 
-app.add_middleware(ProxyHeadersMiddleware)
+app.add_middleware(ProxiedHeadersMiddleware)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
