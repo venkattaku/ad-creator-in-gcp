@@ -4,3 +4,4 @@ pytesseract
 Pillow
 python-multipart
 jinja2
+fastapi-proxiedheadersmiddleware
