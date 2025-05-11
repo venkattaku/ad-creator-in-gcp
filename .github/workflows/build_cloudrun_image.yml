@@ -52,4 +52,4 @@ jobs:
           --region $REGION \
           --platform managed \
           --allow-unauthenticated \
-          --set-env-vars="TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata"
+          --set-env-vars="TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata/"
