@@ -2,6 +2,45 @@
 
 This package is designed to create advertisements using Large Language Models (LLMs) and host the service in Google Cloud Platform (GCP).
 
+![alt text](https://www.mermaidchart.com/raw/bb186efc-d491-44a7-b28d-9fbfd07f00b2?theme=light&version=v0.1&format=svg "Ad Creator Application Architecture")
+```
++-----------------+       +---------------------+       +-----------------+
+| GitHub          |------>| GitHub Codespaces   |------>| GitHub Actions  |
+| (Code Repository)|       | (Development Env.)  |       | (CI/CD Pipeline)|
++-----------------+       +---------------------+       +-----------------+
+                                  ^                      |
+                                  |                      | (Workflow Definition)
+                                  |                      v
+                                  |       +-----------------------+
+                                  |       | Dockerfile            |
+                                  |       | (Defines Container)   |
+                                  |       +-----------------------+
+                                  |                      |
+                                  |                      | (Build & Push)
+                                  |                      v
+                                  |       +-----------------------+
+                                  |       | Google Container      |
+                                  |       | Registry (GCR)        |
+                                  |       | (Docker Image Storage)|
+                                  |       +-----------------------+
+                                  |                      |
+                                  |                      | (Deploy)
+                                  |                      v
+                                  |       +-----------------------+
+                                  +------>| Google Cloud Run      |
+                                          | (Runs Containerized   |
+                                          | Application)        |
+                                          +-----------------------+
+                                                     ^
+                                                     | (HTTP/S Requests)
+                                                     v
+                                          +-----------------+
+                                          | End Users       |
+                                          | (Accessing Ad   |
+                                          | Creator App)    |
+                                          +-----------------+
+```
+
 ## Development in GitHub Codespaces
 
 To develop this package in GitHub Codespaces, follow these steps:
