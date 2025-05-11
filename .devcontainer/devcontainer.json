@@ -3,6 +3,8 @@
   "features": {
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
   },
+  "forwardPorts": [8080],
+  "postCreateCommand": "echo 'Make sure to expose port 8080 in your container settings to access it publicly.'",
   "customizations": {
     "vscode": {
       "extensions": [

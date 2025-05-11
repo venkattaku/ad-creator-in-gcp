@@ -27,6 +27,20 @@ To develop this package in GitHub Codespaces, follow these steps:
     ```
 4. Make changes to the code and test iteratively.
 
+#### Development Using Docker
+1. Build the Docker image:
+    ```bash
+    docker build -t adcreator .
+    ```
+2. Start a Docker container using the image:
+    ```bash
+    docker run -p 8080:8080 --expose 8080 -it adcreator bash
+    ```
+3. Start the server:
+    ```bash
+    uvicorn app.main:app --host 0.0.0.0 --port 8080 --proxy-headers --forwarded-allow-ips '*'
+    ```
+
 ### Testing
 Run the test suite to ensure your changes work as expected:
 ```bash
