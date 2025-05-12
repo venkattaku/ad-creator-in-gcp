@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ad Banner Creator</title>
     <script src="{{ url_for('static', path='/script.js') }}"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 2em; }
-        img { max-width: 400px; display: block; margin-bottom: 1em; }
-        #output { margin-top: 2em; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+        }
+
+        img {
+            max-width: 400px;
+            display: block;
+            margin-bottom: 1em;
+        }
+
+        #output {
+            margin-top: 2em;
+        }
+
+        /* Flexbox container for horizontal layout */
+        .container {
+            display: flex;
+            gap: 20px;
+            /* Space between the divs */
+        }
+
+        .container>div {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
+
 <body>
-    <h2>Upload an image to create an Ad banner</h2>
-    <form id="upload-form">
-        <input id="file-input" name="file" type="file" accept="image/*" required>
-        <button type="submit">Upload</button>
-    </form>
-    <div id="output"></div>
+    <div id="header">
+        <h1>Ad Banner Creator</h1>
+        <p>Upload an image to create an Ad banner. The image will be processed to replace the text with a new one.</p>
+        <p>Click the button below to upload an image. Then, Enter replacement texts for the text in the banner, and
+            submit the replacements. Hurray, you get your new banner with revised text.</p>
+    </div>
+    <div class="container">
+        <div id="source_image_form">
+            <h2>Upload an image to create an Ad banner</h2>
+            <form id="upload-form">
+                <input id="file-input" name="file" type="file" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="output"></div>
+        </div>
+        <form id="replacement-form">
+        </form>
+        <div id="revised-ad">
+        </div>
+    </div>
 </body>
+
 </html>

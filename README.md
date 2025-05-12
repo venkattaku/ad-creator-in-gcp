@@ -73,7 +73,7 @@ To develop this package in GitHub Codespaces, follow these steps:
     ```
 2. Start a Docker container using the image:
     ```bash
-    docker run -p 8080:8080 --expose 8080 -it adcreator bash
+    docker run -p 8080:8080 -it adcreator bash
     ```
 3. Start the server:
     ```bash
